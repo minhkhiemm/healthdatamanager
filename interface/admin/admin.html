@@ -15,6 +15,7 @@
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">
     <div class="dropdown">
+      <!-- chatbox -->
       <button class="btn btn-secondary dropdown-toggle" id="chatbox" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="badge badge-secondary"><i class="fas fa-comments"></i></span>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -27,36 +28,33 @@
               <a class="dropdown-item" href="#">Patient01</a>
               <a class="dropdown-item" href="#">Patient02</a>
           </div>
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">admin01</a>
-        <a class="dropdown-item" href="#">admin02</a>
-        <a class="dropdown-item" href="#">admin03</a>
-      </div>
+      </button>     
     </div>
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+   <ul class="navbar-nav mr-auto">
+    <!-- setting -->
       <li class="nav-item">
         <a class="nav-link" href="#">
           <button type="button" class="btn btn-primary">
-  <i class="fas fa-cogs"></i><span class="badge badge-success"></span>
-  <span class="sr-only">unread messages</span>
-</button>
+            <i class="fas fa-cogs"></i><span class="badge badge-success"></span>
+              <span class="sr-only">unread messages</span>
+          </button>
         </a>
       </li>
-      <li class="nav-item">
-        <button type="button" class="btn btn-primary">
-          <i class="fas fa-bullhorn"></i><span class="badge badge-success">4</span>
-        </button>
+      <!-- setting -->
+      <!-- notification -->
+       <li class="nav-item">
+        <a class="nav-link" href="#">
+          <button type="button" class="btn btn-primary">
+            <i class="fas fa-bullhorn"></i><span class="badge badge-success"></span>
+              <span class="sr-only">unread messages</span>
+          </button>
+        </a>
       </li>
-
+      <!-- notification -->
     </ul>
-    <li class="nav-item col-5">
+      <li class="nav-item col-5">
         Admin khiem
       </li>
     <form class="form-inline my-2 my-lg-0">
@@ -87,9 +85,10 @@
 
 
 
-    <script type="text/javascript" src="./admin01.js"></script>
+    <script type="text/javascript" src="./admin.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
+
