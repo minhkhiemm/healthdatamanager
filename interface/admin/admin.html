@@ -1,94 +1,209 @@
-<!doctype html>
-<html lang="en">
-  <head>
-   
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-   
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <title>Collapsible sidebar using Bootstrap 3</title>
 
-    <title>admin interface</title>
-  </head>
-  <body>
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <div class="dropdown">
-      <!-- chatbox -->
-      <button class="btn btn-secondary dropdown-toggle" id="chatbox" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="badge badge-secondary"><i class="fas fa-comments"></i></span>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Admin01</a>
-              <a class="dropdown-item" href="#">Admin02</a>
-            <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Doctor01</a>
-              <a class="dropdown-item" href="#">Doctor02</a>
-            <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Patient01</a>
-              <a class="dropdown-item" href="#">Patient02</a>
-          </div>
-      </button>     
-    </div>
-  </a>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-   <ul class="navbar-nav mr-auto">
-    <!-- setting -->
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <button type="button" class="btn btn-primary">
-            <i class="fas fa-cogs"></i><span class="badge badge-success"></span>
-              <span class="sr-only">unread messages</span>
-          </button>
-        </a>
-      </li>
-      <!-- setting -->
-      <!-- notification -->
-       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <button type="button" class="btn btn-primary">
-            <i class="fas fa-bullhorn"></i><span class="badge badge-success"></span>
-              <span class="sr-only">unread messages</span>
-          </button>
-        </a>
-      </li>
-      <!-- notification -->
-    </ul>
-      <li class="nav-item col-5">
-        Admin khiem
-      </li>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search<i class="fas fa-binoculars"></i></button>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            
+      
+          <!-- css style -->
+          <link rel="stylesheet" href="./admin.css">
+          <!-- font awsome -->
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
-         <button type="button" class="btn btn-primary">
-            <i class="fas fa-chart-line"></i><span class="badge badge-success"></span>
-        </button>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">new user</a>
-          <a class="dropdown-item" href="#">comment</a>
-          <a class="dropdown-item" href="#">review</a>
-          <a class="dropdown-item" href="#">download files</a>
-          <a class="dropdown-item" href="#">upload files</a>
+
+    </head>
+    <body>
+
+
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+              <!-- slide bar chat box -->
+                <div class="sidebar-header">
+                    <h3>Messenger</h3></h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <p>Admin</p>
+                    <li class="active">
+                        <a href="#menu" >Admin 1</a>
+                        
+                    </li>
+                    <li>
+                        <a href="#menu">Admin 2</a>
+                        
+                        
+                    </li>
+                    <br>
+                    <p>patients</p>
+                    <li>
+                        <a href="#">patient 1</a>
+                    </li>
+                    <li>
+                        <a href="#">patient 2</a>
+                    </li>
+                    <p>doctor</p>
+                    <li>
+                        <a href="#">doctor 1</a>
+                    </li>
+                    <li>
+                        <a href="#">doctor 2</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                <!-- slide bar chat box -->
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+      
+                        <div class="navbar-header">
+                          <!-- navbar begin here -->
+                          <!-- messenger -->
+                            <button 
+                            type="button" 
+                            id="sidebarCollapse" 
+                            class="btn btn-info navbar-btn"
+                            
+                            >
+                                
+                                <i class="fas fa-envelope"></i>
+                                <span>Messenger box</span>
+                            </button>
+
+                            <!-- messenger -->
+                            <!-- notifications -->
+                         <!--    <button 
+                            type="button" 
+                            class="btn btn-primary"
+                          
+                            >
+                              <i class="fas fa-bullhorn"></i>
+                               <span class="badge badge-light">4</span>
+                            </button> -->
+                           
+                            <!-- notifications -->
+                            <!-- setting -->
+                           <!--  <button type="button" class="btn btn-primary">
+                              <i class="fas fa-wrench"></i>
+                               <span class="badge badge-light">3</span>
+                            </button> -->
+                            <!-- setting -->
+                            <!-- 
+                            <button type="button" class="btn btn-primary">
+                              <i class="fas fa-sliders-h"></i>
+                               <span class="badge badge-light">5</span>
+                            </button> -->
+                            <!-- search bar -->
+
+                            <a class="btn btn-primary navbar-btn" data-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification" style="position:relative;">
+                              <i class="fas fa-bullhorn"></i>
+                              <span class="badge badge-light">4</span>
+                            </a>
+                            
+                          <a class="btn btn-primary navbar-btn" data-toggle="collapse" href="#searchbar" role="button" aria-expanded="false" aria-controls="searchbar" style="position:relative;">
+                              <i class="fas fa-wrench"></i>
+                               <span class="badge badge-light">3</span>
+                            </a>
+                            
+                            <a class="btn btn-primary navbar-btn" data-toggle="collapse" href="#status" role="button" aria-expanded="false" aria-controls="status" style="position:relative;">
+                              <i class="fas fa-sliders-h"></i>
+                               <span class="badge badge-light">5</span>
+                            </a> <a class="btn btn-primary navbar-btn" data-toggle="collapse" href="#search" role="button" aria-expanded="false" aria-controls="search" style="position:relative;">
+                              <i class="fas fa-search"></i>
+                               <span class="badge badge-light"></span>
+                            </a>
+                           
+                          </div>
+                       
+                          
+                       
+                          
+
+                        <!-- notifications -->
+                        <!-- setting -->
+
+                        <!-- setting -->
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">Page</a></li>
+                            </ul>
+                        </div>
+                        
+
+                    </div>
+                    <!-- navbar end here -->
+                  <div class="collapse" id="notification">
+                              <div class="card card-body">
+                               <button class="btn btn-success">user01</button>
+                              </div>
+                            </div>
+                  <div class="collapse" id="searchbar">
+                              <div class="card card-body">
+                               something
+                              </div>
+                            </div>
+                             <div class="collapse" id="status">
+                              <div class="card card-body">
+                               something
+                              </div>
+                            </div>
+                            <div class="collapse" id="search">
+                              <div class="card card-body">
+                                <input type="text" placeholder="search for username">
+                              </div>
+                            </div>
+                </nav>
+
+            
+            </div>
         </div>
-      </li>
-    </form>
-  </div>
-</nav>
-
-    
 
 
 
 
 
-    <script type="text/javascript" src="./admin.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+        <!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+               
+
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                });
+            });
+        </script>
+    </body>
 </html>
-
+ 
+<!-- <div class="card border-info mb-sm-0" style="max-width: 18rem;margin-left: 50%;">
+  <div class="card-header">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1456677698485-dceeec22c7fc?ixlib=rb-0.3.5&s=b344c0d85ae5b3a1a498b09993a87a01&auto=format&fit=crop&w=1047&q=80/100px180/?text=Image cap" alt="admin00" style="width:80px;height:auto;">
+  </div>
+  <div class="card-body text-info">
+    <h5 class="card-title">admin00</h5>
+    <a href="#" class="btn btn-danger btn-sm">Sign out</a>
+  </div>
+</div> -->
